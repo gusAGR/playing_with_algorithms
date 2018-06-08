@@ -19,7 +19,7 @@ namespace AlgorithmsTest
             List<int> expectedElements = new List<int>() { 5, 3 };
 
             KnapSack knapSack = new KnapSack();
-            var knapSackResult = knapSack.SolveIntegerKnapStack(maxWeight, volumes, benefits, numberOfElelments);
+            var knapSackResult = knapSack.GetMaxBenefit(maxWeight, volumes, benefits, numberOfElelments);
 
             Assert.Equal(expectedBenefit, knapSackResult.benefit);
             Assert.Equal(expectedElements, knapSackResult.elements);
