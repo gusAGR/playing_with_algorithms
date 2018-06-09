@@ -18,20 +18,7 @@ namespace AlgorithmsTest
             NQueensBacktraking nqueens = new NQueensBacktraking();
             List<List<int>> result = nqueens.SolveNqueensProblem(queens);
 
-            Assert.True(result.Count == 0);
-
-        }
-
-        [Fact]
-        public void GivenTwoQueenWhenSolveThenReturnEmptyList()
-        {
-
-            int queens = 2;
-
-            NQueensBacktraking nqueens = new NQueensBacktraking();
-            List<List<int>> result = nqueens.SolveNqueensProblem(queens);
-
-            Assert.True(result.Count == 0);
+            Assert.True(result.Count==0);
 
         }
 
@@ -46,6 +33,23 @@ namespace AlgorithmsTest
 
             Assert.True(result.Count == 0);
 
+        }
+
+        [Fact]
+        public void GivenFourQueenWhenSolveThenSolveProblem()
+        {
+
+            int queens = 4;
+            List<List<int>> expected = new List<List<int>>(2);
+            List<int> solution1 = new List<int>() { 1, 3, 0, 2 };
+            List<int> solution2 = new List<int>() { 2, 0, 3, 1 };
+            expected.Add(solution1);
+            expected.Add(solution2);
+
+            NQueensBacktraking nqueens = new NQueensBacktraking();
+            List<List<int>> result = nqueens.SolveNqueensProblem(queens);
+
+            Assert.Equal<List<int>>(expected, result);
         }
     }
 }
