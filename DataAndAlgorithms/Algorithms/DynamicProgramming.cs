@@ -8,7 +8,7 @@ namespace Algorithms
     /// <summary>
     /// Implementation of KnapSack integer problem using dynamic programming to solve it.
     /// </summary>
-    public class KnapSack
+    public class DynamcProgramming
     {
         /// <summary>
         /// Gets de maximun benefit and the volumes of the elements included in the knapsack which solve the problem.
@@ -18,11 +18,11 @@ namespace Algorithms
         /// <param name="benefits">Array with the benefit of each element. The n benefit elements corresponds with the n volumes element</param>
         /// <param name="numberOfElements">Number of elements</param>
         /// <returns> Tuple </returns>
-        public (int benefit, List<int> elements) GetMaxBenefit(int maxWeight, int[] volumes, int[] benefits, int numberOfElements)
+        public (int benefit, List<int> elements) GetKnapSackMaxBenefit(int maxWeight, int[] volumes, int[] benefits, int numberOfElements)
         {
             List<int> elements = new List<int>();
 
-            int[,] benefitsMatrix = GenerateMatrix(maxWeight, volumes, benefits, numberOfElements);
+            int[,] benefitsMatrix = GenerateKnapSackDynamicMatrix(maxWeight, volumes, benefits, numberOfElements);
 
             int maxBenefit = benefitsMatrix[numberOfElements, maxWeight];
 
@@ -43,7 +43,7 @@ namespace Algorithms
         /// Generate a matrix with all the possible solutions.
         /// </summary>
         /// <returns>Two dimension array of ints</returns>
-        public int[,] GenerateMatrix(int maxWeight, int[] volumes, int[] benefits, int numberOfElements) {
+        protected int[,] GenerateKnapSackDynamicMatrix(int maxWeight, int[] volumes, int[] benefits, int numberOfElements) {
 
             int[,] benefitsMatrix = new int[numberOfElements +1, maxWeight +1];
 

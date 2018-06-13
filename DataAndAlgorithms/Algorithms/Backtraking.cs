@@ -5,7 +5,7 @@ using System.Text;
 namespace Algorithms
 {
     using System.Linq;
-    public class NQueensBacktraking
+    public class Backtraking
     {
 
         /// <summary>

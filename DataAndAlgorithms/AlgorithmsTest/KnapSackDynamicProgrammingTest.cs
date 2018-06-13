@@ -5,11 +5,11 @@ using Xunit;
 namespace AlgorithmsTest
 {
     using Algorithms;
-    public class KnapSackTest
+    public class KnapSackDynamicProgrammingTest
     {
 
         [Fact]
-        public void Calculate()
+        public void GetKnapSackMaxBenefit()
         {
             int maxWeight = 8;
             int[] volumes = new int[]  { 1, 3,  4,  5,  7 };
@@ -18,8 +18,8 @@ namespace AlgorithmsTest
             int expectedBenefit = 19;
             List<int> expectedElements = new List<int>() { 5, 3 };
 
-            KnapSack knapSack = new KnapSack();
-            var knapSackResult = knapSack.GetMaxBenefit(maxWeight, volumes, benefits, numberOfElelments);
+            DynamcProgramming dynamicExample = new DynamcProgramming();
+            var knapSackResult = dynamicExample.GetKnapSackMaxBenefit(maxWeight, volumes, benefits, numberOfElelments);
 
             Assert.Equal(expectedBenefit, knapSackResult.benefit);
             Assert.Equal(expectedElements, knapSackResult.elements);

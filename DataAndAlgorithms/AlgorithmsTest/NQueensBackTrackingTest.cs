@@ -7,15 +7,15 @@ namespace AlgorithmsTest
 {
     using Algorithms;
 
-    public class BacktrackingTest
+    public class NQueensBackTrackingTest 
     {
 
         [Fact]
-        public void GivenOneQueenWhenSolveThenReturnEmptyList() {
+        public void GivenOneQueenWhenSolveNQueensThenReturnEmptyList() {
 
             int queens = 1;
             
-            NQueensBacktraking nqueens = new NQueensBacktraking();
+            Backtraking nqueens = new Backtraking();
             List<List<int>> result = nqueens.SolveNqueensProblem(queens);
 
             Assert.True(result.Count==0);
@@ -23,12 +23,12 @@ namespace AlgorithmsTest
         }
 
         [Fact]
-        public void GivenThreeQueenWhenSolveThenSolveProblem()
+        public void GivenThreeQueenWhenSolveTNQueensThenEmptyList()
         {
 
             int queens = 3;
 
-            NQueensBacktraking nqueens = new NQueensBacktraking();
+            Backtraking nqueens = new Backtraking();
             List<List<int>> result = nqueens.SolveNqueensProblem(queens);
 
             Assert.True(result.Count == 0);
@@ -36,7 +36,7 @@ namespace AlgorithmsTest
         }
 
         [Fact]
-        public void GivenFourQueenWhenSolveThenSolveProblem()
+        public void GivenFourQueenWhenSolveNQueensThenReturnOk()
         {
 
             int queens = 4;
@@ -46,7 +46,7 @@ namespace AlgorithmsTest
             expected.Add(solution1);
             expected.Add(solution2);
 
-            NQueensBacktraking nqueens = new NQueensBacktraking();
+            Backtraking nqueens = new Backtraking();
             List<List<int>> result = nqueens.SolveNqueensProblem(queens);
 
             Assert.Equal<List<int>>(expected, result);
