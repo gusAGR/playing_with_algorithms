@@ -61,7 +61,7 @@ namespace AlgorithmsTest
             items.Add(item5);
 
             BranchAndBound branchAndBound = new BranchAndBound();
-            branchAndBound.SolveKnapSack(items, maxWeight)
+            branchAndBound.SolveKnapSack(items, maxWeight);
 
 
                         
